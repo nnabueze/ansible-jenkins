@@ -1,0 +1,19 @@
+- hosts: linux02
+  gather_facts: no
+  remote_user: root
+  become: yes
+  Task:
+    - name: install docker-py
+      pip:
+        name: docker-py
+        state: present
+    - name: Installing jenkins container with ansible via jenkins pipeline
+      community.docker.docker_container:
+        name: ansible-jenkins
+        image: customjenkins
+        volumes: 
+          - /root/project/jenkins/jenkins-data:/var/jenkins_home
+        ports:
+          - "8004:8080"
+        state: started
+        restart_policy: always
