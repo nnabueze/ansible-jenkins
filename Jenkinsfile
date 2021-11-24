@@ -9,13 +9,18 @@ pipeline {
 
         stage('Push image to dockerhub') {
             steps {
+                withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerHubLogin')]) {
+                    // some block
+                    sh "docker login -u villavelle101 -p ${dockerHubLogin}"
+                    sh 'docker push'
+                }                
             }
         }
 
-        stage('Deploying server with ansible') {
-            steps {
-            }
-        }
+        // stage('Deploying server with ansible') {
+        //     steps {
+        //     }
+        // }
 
     }
 }
