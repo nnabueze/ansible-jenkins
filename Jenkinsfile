@@ -12,7 +12,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerHubLogin')]) {
                     // some block
                     sh "docker login -u villavelle101 -p ${dockerHubLogin}"
-                    sh 'docker push'
+                    sh 'docker push villavelle101/customjenkins'
                 }                
             }
         }

@@ -41,4 +41,4 @@ RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # Switch back to jenkins user
-USER jenkins
+# USER jenkins
