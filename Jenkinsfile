@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Building Custom jenkins Image') {
             steps {
-                sh 'docker image build . villavelle101/customjenkins'
+                sh 'docker image build -t villavelle101/customjenkins .'
             }
         }
 
