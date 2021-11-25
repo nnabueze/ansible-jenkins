@@ -1,0 +1,7 @@
+---
+# tasks file for remove-jenkins-role
+- name: Remove jenkins
+  community.docker.docker_container:
+    name: ansible-jenkins
+    state: absent
+
