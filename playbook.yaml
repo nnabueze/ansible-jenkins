@@ -4,4 +4,4 @@
   become: yes
   roles:
     - jenkins-role
-    # - remove-jenkins-role
+    - remove-jenkins-role
