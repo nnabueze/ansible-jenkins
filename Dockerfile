@@ -41,6 +41,7 @@ RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 RUN usermod -aG docker jenkins
 RUN apt install -y ansible
+RUN apt install -y sshpass
 
 # Switch back to jenkins user
 # USER jenkins
