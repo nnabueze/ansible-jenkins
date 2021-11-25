@@ -2,7 +2,7 @@
   gather_facts: no
   remote_user: root
   become: yes
-  Task:
+  tasks:
     - name: install docker-py
       pip:
         name: docker-py
