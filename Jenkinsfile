@@ -17,10 +17,13 @@ pipeline {
             }
         }
 
-        // stage('Deploying server with ansible') {
-        //     steps {
-        //     }
-        // }
+        stage('Deploying server with ansible') {
+            steps {
+                ansiblePlaybook credentialsId: 'linux02_ssh', 
+                disableHostKeyChecking: true, installation: 'ansible', 
+                inventory: 'ercas.ini', playbook: 'playbook.yaml'
+            }
+        }
 
     }
 }
