@@ -19,9 +19,9 @@ pipeline {
 
         stage('Deploying server with ansible') {
             steps {
-                ansiblePlaybook credentialsId: 'linux02_ssh', disableHostKeyChecking: true, 
-                installation: 'ansible', inventory: 'ercas.ini', playbook: 'playbook.yaml', 
-                vaultCredentialsId: 'linux02_ssh_password'
+                ansiblePlaybook credentialsId: 'linux02_ssh', 
+                disableHostKeyChecking: true, installation: 'ansible', 
+                inventory: 'ercas.ini', playbook: 'playbook.yaml'
             }
         }
 
