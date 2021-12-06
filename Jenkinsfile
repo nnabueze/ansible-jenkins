@@ -21,7 +21,8 @@ pipeline {
             steps {
                 ansiblePlaybook credentialsId: 'linux02_ssh', 
                 disableHostKeyChecking: true, installation: 'ansible', 
-                inventory: 'ercas.yaml', playbook: 'playbook.yaml'
+                inventory: 'ercas.yaml', playbook: 'playbook.yaml', 
+                vaultCredentialsId: 'vault-password'
             }
         }
 
